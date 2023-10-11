@@ -1,0 +1,40 @@
+import random
+import time
+name=input("enter your name:")
+list=["kavya","mounika","bhavya","sasidhar","vijay","kajal","krishna","vamsi","vasu","mohan","ramana","jithu","joshna"]
+print("connecting game server......")
+time.sleep(2.5)
+print("welcome to snake and lader game....")
+opp=random.choice(list)
+print("finding for oppnent....")
+time.sleep(1.5)
+print("your oppent name is:",opp)
+count=0
+count1=0
+k=[1,2,3,4,5,6]
+p=[1,2,3,4,5,6]
+for i in range(100):
+    yourchoice=input("roll the dice(y/n)")
+    if(yourchoice=="y"):
+        p1=random.choice(p)
+        print("your rolling dice:",p1)
+        count=count+p1
+        print("your are current position is:",count)
+        print("waiting for opponent....")
+        time.sleep(1)
+        opp1=random.choice(k)
+        print("the opponent dice roll:",opp1)
+        count1=count+opp1
+        print("opponent current position is:",count1)
+        if(count>=100):
+            print("generating reasults.........")
+            time.sleep(1)
+            print("congratulations",name)
+            print(name,"winner")
+            break
+        if(count1>=100):
+            print("generating reasults.........")
+            time.sleep(1)
+            print("oops your looser....better luck next time...")
+            print(opp,"winner")
+            break
