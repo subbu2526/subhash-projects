@@ -1,0 +1,45 @@
+import random
+import time
+
+def displayIntro():
+    print("It is the end of a long year of fighting space criminals.")
+    print("You came to a crossroads on your trip home, one path leads home")
+    print("where you will be handsomely rewarded for a job well done,")
+    print("and the other leads through a gamma ray burst that will disintegrate you.")
+    print()
+
+def choosePath():
+    path = ""
+    while path != "1" and path != "2":
+        path = input("Which path will you choose? (1 or 2) ")
+    return path
+
+def checkPath(chosenPath):
+    print("You head down the path.")
+    time.sleep(2)
+    print("There is an asteroid nearby that looks familiar, that must be a good sign...")
+    time.sleep(2)
+    print("But your skin begins to tingle...")
+    print()
+    time.sleep(2)
+
+    if chosenPath == str(random.randint(1, 2)):
+        print("That tingle was just the feeling of admiration from the citizens of the galaxy!")
+        print("Welcome home!")
+        print("Thanks for playing")
+    else:
+        print("An extremely energetic burst of gamma rays passes through you,")
+        print("causing all of the atoms in your body to dissociate.")
+        print("There is no record left of your existence.")
+        print("Thanks for palying")
+
+playAgain = "yes"
+while playAgain.lower() == "yes" or playAgain.lower() == "y":
+    try:
+        displayIntro()
+        choice = choosePath()
+        checkPath(choice)
+        playAgain = input("Do you want to play again? (yes or y to continue playing): ")
+    except ValueError:
+        print("")
+print("Invalid input.Please enter yes or y")
